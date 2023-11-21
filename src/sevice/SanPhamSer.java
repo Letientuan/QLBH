@@ -20,5 +20,6 @@ public interface SanPhamSer {
 
     String update(SanPham sp, String ma);
 
-    String delete(String ma);
+    String Delete(String ma);
+    public boolean update(SanPham spp);
 }

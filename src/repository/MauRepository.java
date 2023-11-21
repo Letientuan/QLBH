@@ -19,37 +19,45 @@ import java.util.List;
 public class MauRepository {
 
     public List<MauSac> getAll() {
-        String query = "SELECT [Ma]"
-                + "      ,[Ten]"
-                + "  FROM [dbo].[MauSac]";
+        String query = """
+                       select mamau,ten from mausac
+                       """;
         try (Connection cnn = DBConnection.getConnection(); PreparedStatement ps = cnn.prepareStatement(query)) {
-            List<MauSac> listSp = new ArrayList<>();
+            List<MauSac> listmau = new ArrayList<>();
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                listSp.add(new MauSac(rs.getInt(1), rs.getString(2)));
+                listmau.add(new MauSac(rs.getInt(1), rs.getString(2)));
             }
-            return listSp;
+            return listmau;
         } catch (Exception e) {
             e.printStackTrace(System.out);
         }
         return null;
     }
 
-    public MauSac getOneMau(int ma) {
-        String query = "SELECT [Ma]"
-                + "      ,[Ten]"
-                + "  FROM [dbo].[MauSac] WHERE Ma = ?";
-        try (Connection cnn = DBConnection.getConnection(); PreparedStatement ps = cnn.prepareStatement(query)) {
-            ps.setObject(1, ma);
+    
+        
+      public String getOnemau(String ten) {
+        
+           String query = """
+                      SELECT [mamau] 
+                        FROM [dbo].[mausac]
+                      	where [Ten]  = ?
+                      """;
+        try (Connection con = DBConnection.getConnection();
+                PreparedStatement ps = con.prepareStatement(query)) {
+            ps.setObject(1, ten);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                return new MauSac(rs.getInt(1), rs.getString(2));
+                String id = rs.getString(1);
+                return id;
             }
         } catch (Exception e) {
             e.printStackTrace(System.out);
         }
         return null;
     }
+      
 
     public boolean addSanPham(MauSac kt) {
         int check = 0;

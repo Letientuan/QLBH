@@ -4,7 +4,7 @@
  */
 package service;
 
-import entity.DongSP;
+import entity.DongSanPham;
 import java.util.List;
 
 /**
@@ -12,13 +12,13 @@ import java.util.List;
  * @author admin
  */
 public interface DongSPSer {
-    List<DongSP> getAll();
+    List<DongSanPham> getAll();
 
-    DongSP getOneDSP(int ma);
+    DongSanPham getOneDSP(String ten);
 
-    String add(DongSP dsp);
+    String add(DongSanPham dsp);
 
-    String update(DongSP dsp, int ma);
+    String update(DongSanPham dsp, int ma);
 
     String delete(int ma);
 }

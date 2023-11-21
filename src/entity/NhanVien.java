@@ -17,8 +17,9 @@ public class NhanVien {
     private String diaChi;
     private String sdt;
     private String email;
+    private String taiKhoan;
     private DangNhap dangNhap;
-    private ChucVu chucVu;
+    private String chucVu;
     private Integer trangThai;
 
     public NhanVien() {

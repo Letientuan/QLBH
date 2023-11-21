@@ -14,7 +14,7 @@ import java.util.List;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import view.BanHang;
-import view.ChiTietSanPhamView;
+import view.sp;
 import view.HoaDonView;
 import view.KhuyenMai;
 import view.KhachHang;
@@ -93,7 +93,7 @@ public class DanhMucRepository {
                     node = new NhanVienView();
                     break;
                 case "SanPham":
-                    node = new view.SanPham();
+                    node = new view.ChiTietSanPhamView();
                     break;
                 default:
                     break;

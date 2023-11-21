@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package service;
+package sevice;
 
 import entity.ChatLieu;
 import java.util.List;
@@ -14,7 +14,7 @@ import java.util.List;
 public interface ChatLieuSer {
     List<ChatLieu> getAll();
 
-    ChatLieu getOneCL(int ma);
+    ChatLieu getOneCL(String ten);
 
     String add(ChatLieu ct);
 

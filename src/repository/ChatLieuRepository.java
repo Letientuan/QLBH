@@ -19,9 +19,9 @@ import java.util.List;
 public class ChatLieuRepository {
 
     public List<ChatLieu> getAll() {
-        String query = "SELECT [Ma]"
-                + "      ,[Ten]"
-                + "  FROM [dbo].[ChatLieu]";
+        String query = """
+                       select machatlieu,ten from chatlieu
+                       """;
         try (Connection cnn = DBConnection.getConnection(); PreparedStatement ps = cnn.prepareStatement(query)) {
             List<ChatLieu> listSp = new ArrayList<>();
             ResultSet rs = ps.executeQuery();
@@ -35,21 +35,28 @@ public class ChatLieuRepository {
         return null;
     }
 
-    public ChatLieu getOneCL(int ma) {
-        String query = "SELECT [Ma]"
-                + "      ,[Ten]"
-                + "  FROM [dbo].[ChatLieu] WHERE Ma = ?";
-        try (Connection cnn = DBConnection.getConnection(); PreparedStatement ps = cnn.prepareStatement(query)) {
-            ps.setObject(1, ma);
+   public String getOneCL(String ten) {
+        
+           String query = """
+                      SELECT [Id] 
+                        FROM [dbo].[Loai_phong]
+                      	where [Ten]  = ?
+                      """;
+        try (Connection con = DBConnection.getConnection();
+                PreparedStatement ps = con.prepareStatement(query)) {
+            ps.setObject(1, ten);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                return new ChatLieu(rs.getInt(1), rs.getString(2));
+                String id = rs.getString(1);
+                return id;
             }
         } catch (Exception e) {
             e.printStackTrace(System.out);
         }
         return null;
     }
+        
+    
 
     public boolean addChatLieu(ChatLieu cl) {
         int check = 0;

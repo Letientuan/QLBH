@@ -11,23 +11,26 @@ package entity;
 public class SanPham {
 
     private String maSP;
-    private SanPham sanPham;
-    private NhaSanXuat nsx;
-    private MauSac mauSac;
-    private DongSP dongSP;
-    private ChatLieu chatLieu;
+    private int nsx;
+    private int mamauSac;
+    private int dongSP;
+    private int chatLieu;
     private String TenSP;
     private String moTa;
     private Integer soLuongTon;
     private Double giaNhap;
     private Double giaBan;
     private String anhSp;
+    private String size;
+    private  int trangthai;
 
-    public SanPham(String maSP, SanPham sanPham, NhaSanXuat nsx, MauSac mauSac, DongSP dongSP, ChatLieu chatLieu, String TenSP, String moTa, Integer soLuongTon, Double giaNhap, Double giaBan, String anhSp) {
+    public SanPham() {
+    }
+
+    public SanPham(String maSP, int nsx, int mamauSac, int dongSP, int chatLieu, String TenSP, String moTa, Integer soLuongTon, Double giaNhap, Double giaBan, String anhSp, String size, int trangthai) {
         this.maSP = maSP;
-        this.sanPham = sanPham;
         this.nsx = nsx;
-        this.mauSac = mauSac;
+        this.mamauSac = mamauSac;
         this.dongSP = dongSP;
         this.chatLieu = chatLieu;
         this.TenSP = TenSP;
@@ -36,9 +39,8 @@ public class SanPham {
         this.giaNhap = giaNhap;
         this.giaBan = giaBan;
         this.anhSp = anhSp;
-    }
-
-    public SanPham() {
+        this.size = size;
+        this.trangthai = trangthai;
     }
 
     public String getMaSP() {
@@ -49,43 +51,35 @@ public class SanPham {
         this.maSP = maSP;
     }
 
-    public SanPham getSanPham() {
-        return sanPham;
-    }
-
-    public void setSanPham(SanPham sanPham) {
-        this.sanPham = sanPham;
-    }
-
-    public NhaSanXuat getNsx() {
+    public int getNsx() {
         return nsx;
     }
 
-    public void setNsx(NhaSanXuat nsx) {
+    public void setNsx(int nsx) {
         this.nsx = nsx;
     }
 
-    public MauSac getMauSac() {
-        return mauSac;
+    public int getMamauSac() {
+        return mamauSac;
     }
 
-    public void setMauSac(MauSac mauSac) {
-        this.mauSac = mauSac;
+    public void setMamauSac(int mamauSac) {
+        this.mamauSac = mamauSac;
     }
 
-    public DongSP getDongSP() {
+    public int getDongSP() {
         return dongSP;
     }
 
-    public void setDongSP(DongSP dongSP) {
+    public void setDongSP(int dongSP) {
         this.dongSP = dongSP;
     }
 
-    public ChatLieu getChatLieu() {
+    public int getChatLieu() {
         return chatLieu;
     }
 
-    public void setChatLieu(ChatLieu chatLieu) {
+    public void setChatLieu(int chatLieu) {
         this.chatLieu = chatLieu;
     }
 
@@ -136,6 +130,30 @@ public class SanPham {
     public void setAnhSp(String anhSp) {
         this.anhSp = anhSp;
     }
-    
 
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
+
+    public int getTrangthai() {
+        return trangthai;
+    }
+
+    public void setTrangthai(int trangthai) {
+        this.trangthai = trangthai;
+    }
+
+    
+   public String gettrangthaisp(Integer trangthai){
+       if(trangthai==1){
+           return "còn hàng";
+       }
+       return "hết hàng";
+   }
+
+    
 }

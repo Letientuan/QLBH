@@ -9,27 +9,23 @@ package entity;
  * @author thong
  */
 public class NhaSanXuat {
-    private Integer nhaSanXuat;
+    private Integer manhaSanXuat;
     private String tenNhaSanXuat;
 
     public NhaSanXuat() {
     }
 
-    public NhaSanXuat(Integer nhaSanXuat, String tenNhaSanXuat) {
-        this.nhaSanXuat = nhaSanXuat;
+    public NhaSanXuat(Integer manhaSanXuat, String tenNhaSanXuat) {
+        this.manhaSanXuat = manhaSanXuat;
         this.tenNhaSanXuat = tenNhaSanXuat;
     }
 
-    public NhaSanXuat(String tenNhaSanXuat) {
-        this.tenNhaSanXuat = tenNhaSanXuat;
+    public Integer getManhaSanXuat() {
+        return manhaSanXuat;
     }
 
-    public Integer getNhaSanXuat() {
-        return nhaSanXuat;
-    }
-
-    public void setNhaSanXuat(Integer nhaSanXuat) {
-        this.nhaSanXuat = nhaSanXuat;
+    public void setManhaSanXuat(Integer manhaSanXuat) {
+        this.manhaSanXuat = manhaSanXuat;
     }
 
     public String getTenNhaSanXuat() {
@@ -39,10 +35,8 @@ public class NhaSanXuat {
     public void setTenNhaSanXuat(String tenNhaSanXuat) {
         this.tenNhaSanXuat = tenNhaSanXuat;
     }
-    public Object[] todataRow() {
-        return new Object[]{nhaSanXuat,tenNhaSanXuat};
-    }
 
+   
     @Override
     public String toString() {
         return  tenNhaSanXuat ;

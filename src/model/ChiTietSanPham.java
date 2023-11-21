@@ -14,7 +14,7 @@ public class ChiTietSanPham {
     private SanPham sanPham;
     private NhaSanXuat nsx;
     private MauSac mauSac;
-    private DongSP dongSP;
+    private DongSanPham dongSP;
     private ChatLieu chatLieu;
     private KichThuoc kichThuoc;
     private String moTa;
@@ -30,7 +30,7 @@ public class ChiTietSanPham {
         this.maCTSP = maCTSP;
     }
 
-    public ChiTietSanPham(String maCTSP, SanPham sanPham, NhaSanXuat nsx, MauSac mauSac, DongSP dongSP, ChatLieu chatLieu, KichThuoc kichThuoc, String moTa, Integer soLuongTon, Double giaNhap, Double giaBan, String anhSp) {
+    public ChiTietSanPham(String maCTSP, SanPham sanPham, NhaSanXuat nsx, MauSac mauSac, DongSanPham dongSP, ChatLieu chatLieu, KichThuoc kichThuoc, String moTa, Integer soLuongTon, Double giaNhap, Double giaBan, String anhSp) {
         this.maCTSP = maCTSP;
         this.sanPham = sanPham;
         this.nsx = nsx;
@@ -45,7 +45,7 @@ public class ChiTietSanPham {
         this.anhSp = anhSp;
     }
 
-    public ChiTietSanPham(String maCTSP, SanPham sanPham, NhaSanXuat nsx, MauSac mauSac, DongSP dongSP, ChatLieu chatLieu, KichThuoc kichThuoc, Integer soLuongTon, Double giaBan) {
+    public ChiTietSanPham(String maCTSP, SanPham sanPham, NhaSanXuat nsx, MauSac mauSac, DongSanPham dongSP, ChatLieu chatLieu, KichThuoc kichThuoc, Integer soLuongTon, Double giaBan) {
         this.maCTSP = maCTSP;
         this.sanPham = sanPham;
         this.nsx = nsx;
@@ -90,11 +90,11 @@ public class ChiTietSanPham {
         this.mauSac = mauSac;
     }
 
-    public DongSP getDongSP() {
+    public DongSanPham getDongSP() {
         return dongSP;
     }
 
-    public void setDongSP(DongSP dongSP) {
+    public void setDongSP(DongSanPham dongSP) {
         this.dongSP = dongSP;
     }
 

@@ -22,7 +22,7 @@ import javax.swing.table.DefaultTableModel;
 import repository.DangNhapRepository;
 import repository.NhanVienRepository;
 import service.NhanVienService;
-import service.ServiceImpl.NhanVienImpl;
+import ServiceImpl.NhanVienImpl;
 
 /**
  *

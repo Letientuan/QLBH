@@ -14,7 +14,7 @@ import java.util.List;
 public interface NSXSer {
     List<NhaSanXuat> getAll();
 
-    NhaSanXuat getOneNSX(int ma);
+    NhaSanXuat getOneNSX(String ten);
 
     String add(NhaSanXuat nsx);
 

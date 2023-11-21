@@ -4,10 +4,7 @@
  */
 package entity;
 
-/**
- *
- * @author thong
- */
+
 public class MauSac {
     private Integer maMS;
     private String tenMS;

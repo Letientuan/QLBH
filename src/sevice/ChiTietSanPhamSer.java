@@ -6,7 +6,7 @@ package service;
 
 import entity.ChatLieu;
 import entity.SanPham;
-import entity.DongSP;
+import entity.DongSanPham;
 import entity.KichThuoc;
 import entity.MauSac;
 import entity.NhaSanXuat;
@@ -29,7 +29,7 @@ public interface ChiTietSanPhamSer {
 
     List<NhaSanXuat> getAllNSX();
 
-    List<DongSP> getAllDSP();
+    List<DongSanPham> getAllDSP();
 
     List<KichThuoc> getAllKT();
 
