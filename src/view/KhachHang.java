@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import sevice.khachhangSevice;
+import service.khachhangSevice;
 import lsevice.Ikhsv;
 
 /**
@@ -707,7 +707,7 @@ public class KhachHang extends javax.swing.JPanel {
     }//GEN-LAST:event_txt_maActionPerformed
 
     private void btn_xoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_xoaActionPerformed
- Integer row = tbl_khachhang.getSelectedRow();
+    Integer row = tbl_khachhang.getSelectedRow();
         if (row < 0) {
             JOptionPane.showMessageDialog(this, "chọn dòng cầ xóa");
             return;

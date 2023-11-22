@@ -26,7 +26,7 @@ import repository.Lrepo.isanphamrp;
 import repository.MauRepository;
 import repository.NSXRepository;
 import repository.sanphamRp;
-import ServiceImpl.SanPhamSerImpl;
+//import ServiceImpl.SanPhamSerImpl;
 
 /**
  *
@@ -38,13 +38,13 @@ public class ChiTietSanPhamView extends javax.swing.JPanel {
      * Creates new form ChiTietSanPhamView
      */
     private DefaultTableModel dtm = new DefaultTableModel();
-    private SanPhamSerImpl spsv = new SanPhamSerImpl();
+//    private SanPhamSerImpl spsv = new SanPhamSerImpl();
     private MauRepository maurp = new MauRepository();
     private NSXRepository nsxrp = new NSXRepository();
     private LoaiRepo dongrp = new LoaiRepo();
     private ChatLieuRepository chatlieurp = new ChatLieuRepository();
 
-    private List<SanPhammd> listsp = spsv.getall();
+//    private List<SanPhammd> listsp = spsv.getall();
 
     private List<MauSac> lisstmau = new ArrayList<>();
     private List<NhaSanXuat> listnsx = new ArrayList<>();
@@ -61,7 +61,7 @@ public class ChiTietSanPhamView extends javax.swing.JPanel {
 
     public ChiTietSanPhamView() {
         initComponents();
-        loadTable(listsp);
+//        loadTable(listsp);
         loadCombobox();
     }
 
@@ -102,7 +102,7 @@ public class ChiTietSanPhamView extends javax.swing.JPanel {
             model.addRow(row);
         }
 
-        listsp = list;
+//        listsp = list;
     }
 
     private void loadCombobox() {
@@ -154,86 +154,11 @@ public class ChiTietSanPhamView extends javax.swing.JPanel {
         cbo_chatlieu.removeAllItems();
         listchatlieu.forEach(s -> boxModel3.addElement(s.getTenCL()));
     }
- public boolean vailidate(){
- 
-        if (txt_tensp.getText().isEmpty() || txt_gianhap.getText().isEmpty() || txt_giaban.getText().isEmpty() || txt_mota.getText().isEmpty()|| txt_soluong.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "vui lòng điền đầy đủ thông tin");
 
-            txt_tensp.requestFocus();
-            txt_gianhap.requestFocus();
-            txt_giaban.requestFocus();
-            txt_mota.requestFocus();
-            txt_soluong.requestFocus();
-            return false;
-        }
-
-        return true;
-    
-
- }
-  public boolean checkTenl() {
-        if (txt_tensp.getText().length() <50) {
-            return true;
-        }
-        JOptionPane.showMessageDialog(this, "vui lòng nhập  Tên không quá 50 ký tự");
-        return false;
-    }
-  public void checkgia(){
-String masp = txt_masp.getText().trim();
-String tensp = txt_tensp.getText().trim();
-String mota = txt_mota.getText().trim();
-
-int slt;
-try {
-    slt = Integer.parseInt(txt_soluong.getText().trim());
-    if (slt < 0) {
-        // Handle the case where a negative quantity is entered
-       
-        return; // or throw an exception if needed
-    }
-} catch (NumberFormatException e) {
-    // Handle the case where the quantity is not a valid integer
-     JOptionPane.showMessageDialog(this,"số lượng phải >1000,và phải là số");
-    return; // or throw an exception if needed
-}
-
-int gianhap;
-try {
-    gianhap = Integer.parseInt(txt_gianhap.getText().trim());
-    if (gianhap < 0) {
-        // Handle the case where a negative purchase price is entered
-        
-        return; // or throw an exception if needed
-    }
-} catch (NumberFormatException e) {
-    // Handle the case where the purchase price is not a valid integer
-  JOptionPane.showMessageDialog(this,"giá nhập phải lớn hơn 1000,và phải là số");
-    return; // or throw an exception if needed
-}
-
-int giaban;
-try {
-    giaban = Integer.parseInt(txt_giaban.getText().trim());
-    if (giaban < 0 ){
-        // Handle the case where a negative sale price is entered
-      
-        return; // or throw an exception if needed
-    }
-    
-} catch (NumberFormatException e) {
-    // Handle the case where the sale price is not a valid integer
-    JOptionPane.showMessageDialog(this,"giá bán phải lớn hơn 0,và phải là số");
-    return; 
-}
-
-// If the code reaches here, it means all validations passed
-// You can proceed with using masp, tensp, mota, slt, gianhap, and giaban in your logic
-
-  }
     private int addSanPham() {
        
           
-            SanPham sp = new SanPham();
+             SanPham sp = new SanPham();
             String masp = txt_masp.getText();
             String tensp = txt_tensp.getText();
             String mota = txt_mota.getText();
@@ -253,7 +178,7 @@ try {
 
             String nsx = cbo_hang.getSelectedItem().toString();
             for (NhaSanXuat n : listnsx) {
-                if (n.getTenNhaSanXuat() == nsx) {
+                if (n.getTenNhaSanXuat()== nsx) {
                     int nhasx = n.getManhaSanXuat();
                     sp.setNsx(nhasx);
                 }
@@ -293,7 +218,7 @@ try {
 
             
             sp.setSize(size);
-            spsv.add(sp);
+//            spsv.add(sp);
             return 0;
         }
 
@@ -362,7 +287,7 @@ try {
             sp.setAnhSp(pathfile1);
             sp.setSize(size);
 
-            spsv.update(sp);
+//            spsv.update(sp);
             tk(-1);
             JOptionPane.showConfirmDialog(this, "updete thành công sản phẩm có mã là :" + masp);
         
@@ -370,13 +295,13 @@ try {
 
     public void tk(int status) {
 
-        List<SanPhammd> output = spsv.getall();
-        loadTable(output);
+//        List<SanPhammd> output = spsv.getall();
+//        loadTable(output);
     }
     public void timkiem(){
         String ma=txt_timkiem.getText();       
-           List<SanPhammd> list= spsv.Timkiem(ma,tt);
-           loadTable(list);     
+//           List<SanPhammd> list= spsv.Timkiem(ma,tt);
+//           loadTable(list);     
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -998,15 +923,9 @@ String pathfile1;
     }//GEN-LAST:event_btnAnhActionPerformed
 
     private void btn_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addActionPerformed
-        try {
-            checkgia();
-        if(vailidate() == true && checkTenl()==true ){
-            addSanPham();
-            tk(-1);
-            JOptionPane.showConfirmDialog(this, "Thêm Thành công ");
-        }
-        } catch (Exception e) {
-        }
+        addSanPham();
+        tk(-1);
+
     }//GEN-LAST:event_btn_addActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -1034,7 +953,8 @@ String pathfile1;
 
     private void tbl_sanphamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_sanphamMouseClicked
         vitri = tbl_sanpham.getSelectedRow();
-        SanPhammd sp = listsp.get(vitri);
+//        SanPhammd sp = listsp.get(vitri);
+         SanPhammd sp = new SanPhammd();
         txt_masp.setText(sp.getMaSP());
         txt_tensp.setText(sp.getTenSP());
         txt_gianhap.setText(String.valueOf(sp.getGiaNhap()));
@@ -1077,13 +997,12 @@ String pathfile1;
             cbo_size.setSelectedIndex(5);
         }
 
-        if (listsp.get(vitri).getTrangthai() == 1) {
-            conhang.setSelected(true);
-        } else {
-            khongconhang.setSelected(true);
-        }
+//        if (listsp.get(vitri).getTrangthai() == 1) {
+//            conhang.setSelected(true);
+//        } else {
+//            khongconhang.setSelected(true);
+//        }
         jpane_anh.setIcon(new ImageIcon(String.valueOf(sp.getAnhSp())));
-        pathfile1 = sp.getAnhSp();
     }//GEN-LAST:event_tbl_sanphamMouseClicked
 
     private void cbo_mauItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbo_mauItemStateChanged
@@ -1135,7 +1054,7 @@ String pathfile1;
             return;
         }
         try {
-            spsv.Delete(ma);
+//            spsv.Delete(ma);
             tk(-1);
             JOptionPane.showConfirmDialog(this, "đã xóa sản Phẩm có Mã Là :" + ma);
         } catch (Exception e) {
@@ -1164,8 +1083,8 @@ String pathfile1;
                 break;
         }
         String ma = txt_timkiem.getText();
-        List<SanPhammd> output = spsv.Timkiem(ma, tt);
-        loadTable(output);
+//        List<SanPhammd> output = spsv.Timkiem(ma, tt);
+//        loadTable(output);
       
     }//GEN-LAST:event_cbo_loctrangthaiItemStateChanged
 

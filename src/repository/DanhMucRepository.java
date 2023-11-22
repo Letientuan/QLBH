@@ -14,11 +14,10 @@ import java.util.List;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import view.BanHang;
-import view.sp;
 import view.HoaDonView;
 import view.KhuyenMai;
 import view.KhachHang;
-
+import view.NhanVienView;
 
 import view.ThongKe;
 
@@ -89,9 +88,9 @@ public class DanhMucRepository {
                 case "KhachHang":
                     node = new KhachHang();
                     break;
-//                case "NhanVien":
-//                    node = new NhanVienView();
-//                    break;
+                case "NhanVien":
+                    node = new NhanVienView();
+                    break;
                 case "SanPham":
                     node = new view.ChiTietSanPhamView();
                     break;

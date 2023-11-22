@@ -4,7 +4,6 @@
  */
 package entity;
 
-import java.util.Vector;
 
 /**
  *
