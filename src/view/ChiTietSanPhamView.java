@@ -26,7 +26,7 @@ import repository.Lrepo.isanphamrp;
 import repository.MauRepository;
 import repository.NSXRepository;
 import repository.sanphamRp;
-//import ServiceImpl.SanPhamSerImpl;
+import ServiceImpl.SanPhamSerImpl;
 
 /**
  *
@@ -38,13 +38,13 @@ public class ChiTietSanPhamView extends javax.swing.JPanel {
      * Creates new form ChiTietSanPhamView
      */
     private DefaultTableModel dtm = new DefaultTableModel();
-//    private SanPhamSerImpl spsv = new SanPhamSerImpl();
+    private SanPhamSerImpl spsv = new SanPhamSerImpl();
     private MauRepository maurp = new MauRepository();
     private NSXRepository nsxrp = new NSXRepository();
     private LoaiRepo dongrp = new LoaiRepo();
     private ChatLieuRepository chatlieurp = new ChatLieuRepository();
 
-//    private List<SanPhammd> listsp = spsv.getall();
+    private List<SanPhammd> listsp = spsv.getall();
 
     private List<MauSac> lisstmau = new ArrayList<>();
     private List<NhaSanXuat> listnsx = new ArrayList<>();
@@ -61,7 +61,7 @@ public class ChiTietSanPhamView extends javax.swing.JPanel {
 
     public ChiTietSanPhamView() {
         initComponents();
-//        loadTable(listsp);
+        loadTable(listsp);
         loadCombobox();
     }
 
@@ -102,7 +102,7 @@ public class ChiTietSanPhamView extends javax.swing.JPanel {
             model.addRow(row);
         }
 
-//        listsp = list;
+        listsp = list;
     }
 
     private void loadCombobox() {
@@ -218,7 +218,7 @@ public class ChiTietSanPhamView extends javax.swing.JPanel {
 
             
             sp.setSize(size);
-//            spsv.add(sp);
+            spsv.add(sp);
             return 0;
         }
 
@@ -287,7 +287,7 @@ public class ChiTietSanPhamView extends javax.swing.JPanel {
             sp.setAnhSp(pathfile1);
             sp.setSize(size);
 
-//            spsv.update(sp);
+            spsv.update(sp);
             tk(-1);
             JOptionPane.showConfirmDialog(this, "updete thành công sản phẩm có mã là :" + masp);
         
@@ -295,13 +295,13 @@ public class ChiTietSanPhamView extends javax.swing.JPanel {
 
     public void tk(int status) {
 
-//        List<SanPhammd> output = spsv.getall();
-//        loadTable(output);
+        List<SanPhammd> output = spsv.getall();
+        loadTable(output);
     }
     public void timkiem(){
         String ma=txt_timkiem.getText();       
-//           List<SanPhammd> list= spsv.Timkiem(ma,tt);
-//           loadTable(list);     
+           List<SanPhammd> list= spsv.Timkiem(ma,tt);
+           loadTable(list);     
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -909,7 +909,7 @@ String pathfile1;
         int returnValue = f.showOpenDialog(this);
         if (returnValue == JFileChooser.APPROVE_OPTION) {
             File ftenanh = f.getSelectedFile();
-//              String pathfile = ftenanh.getAbsolutePath();
+              String pathfile = ftenanh.getAbsolutePath();
             pathfile1 = ftenanh.getAbsolutePath().replace("//", "--");
             System.out.println(pathfile1);
             BufferedImage b;
@@ -953,8 +953,8 @@ String pathfile1;
 
     private void tbl_sanphamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_sanphamMouseClicked
         vitri = tbl_sanpham.getSelectedRow();
-//        SanPhammd sp = listsp.get(vitri);
-         SanPhammd sp = new SanPhammd();
+        SanPhammd sp = listsp.get(vitri);
+//         SanPhammd sp = new SanPhammd();
         txt_masp.setText(sp.getMaSP());
         txt_tensp.setText(sp.getTenSP());
         txt_gianhap.setText(String.valueOf(sp.getGiaNhap()));
@@ -997,11 +997,11 @@ String pathfile1;
             cbo_size.setSelectedIndex(5);
         }
 
-//        if (listsp.get(vitri).getTrangthai() == 1) {
-//            conhang.setSelected(true);
-//        } else {
-//            khongconhang.setSelected(true);
-//        }
+        if (listsp.get(vitri).getTrangthai() == 1) {
+            conhang.setSelected(true);
+        } else {
+            khongconhang.setSelected(true);
+        }
         jpane_anh.setIcon(new ImageIcon(String.valueOf(sp.getAnhSp())));
     }//GEN-LAST:event_tbl_sanphamMouseClicked
 
@@ -1054,7 +1054,7 @@ String pathfile1;
             return;
         }
         try {
-//            spsv.Delete(ma);
+            spsv.Delete(ma);
             tk(-1);
             JOptionPane.showConfirmDialog(this, "đã xóa sản Phẩm có Mã Là :" + ma);
         } catch (Exception e) {

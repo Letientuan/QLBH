@@ -14,7 +14,7 @@ import java.util.List;
 public interface DongSPSer {
     List<DongSanPham> getAll();
 
-    DongSanPham getOneDSP(String ten);
+//    DongSanPham getOneDSP(String ten);
 
     String add(DongSanPham dsp);
 

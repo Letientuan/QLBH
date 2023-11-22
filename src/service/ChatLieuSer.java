@@ -14,7 +14,7 @@ import java.util.List;
 public interface ChatLieuSer {
     List<ChatLieu> getAll();
 
-    ChatLieu getOneCL(String ten);
+//    ChatLieu getOneCL(String ten);
 
     String add(ChatLieu ct);
 
