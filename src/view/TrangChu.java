@@ -329,9 +329,9 @@ public class TrangChu extends javax.swing.JFrame {
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         // TODO add your handling code here:
-        Login login = new Login();
-        login.show();
-        dispose();
+//        Login login = new Login();
+//        login.show();
+//        dispose();
     }//GEN-LAST:event_btnExitActionPerformed
 
     /**

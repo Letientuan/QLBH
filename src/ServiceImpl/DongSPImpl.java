@@ -23,11 +23,11 @@ public class DongSPImpl implements DongSPSer {
         List<DongSanPham> listAll = new ArrayList<>();
         return listAll = spRep.getAll();
     }
-
-    @Override
-    public DongSanPham getOneDSP(String ten) {
-        return spRep.getOneDSP(ten);
-    }
+//
+//    @Override
+//    public DongSanPham getOneDSP(String ten) {
+//        return spRep.getOneDSP(ten);
+//    }
 
     @Override
     public String add(DongSanPham dsp) {

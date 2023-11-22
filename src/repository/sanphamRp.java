@@ -8,8 +8,6 @@ import Utilities.DBConnection;
 import entity.ChatLieu;
 import entity.SanPham;
 import entity.DongSanPham;
-
-import entity.KichThuoc;
 import entity.MauSac;
 import entity.NhaSanXuat;
 import entity.SanPham;
@@ -97,7 +95,7 @@ public class sanphamRp implements isanphamrp {
                      JOIN dongsp ON dongsp.madongsp = sanpham.madongsp 
                      JOIN ChatLieu ON ChatLieu.machatlieu = SanPham.MaChatLieu
                    """;
-        String timkiem = query + " where (MaSP like '%" + mA + "%' or tensp like '%" + mA + "%'  )" + "and trangthai like   " + tthai + " ";
+        String timkiem = query + " where (MaSP like '%" + mA + "%' or tensp like N'%" + mA + "%'  )" + "and trangthai like   " + tthai + " ";
 
         try ( Connection cnn = DBConnection.getConnection();  PreparedStatement ps = cnn.prepareStatement(timkiem)) {
 
@@ -226,8 +224,8 @@ public class sanphamRp implements isanphamrp {
         }
         return check > 0;
     }
-
-    public SanPham getOneTen(String ten) {
+}
+//public SanPham getOneTen(String ten) {
 //        String query = "SELECT Id,IdSP,IdNsx,IdMauSac,IdDongSP,NamBH,MoTa,SoLuongTon,GiaNhap,GiaBan FROM ChiTietSP where Id=?";
 //        try ( Connection cnn = DBConnection.getConnection();  PreparedStatement ps = cnn.prepareStatement(query)) {
 //            ps.setObject(1, ten);
@@ -246,8 +244,8 @@ public class sanphamRp implements isanphamrp {
 //        } catch (Exception e) {
 //            e.printStackTrace(System.out);
 //        }
-        return null;
-    }
+//        return null;
+//    }
 ////    public static void main(String[] args) {
 ////        ChiTietSanPham ctsp = new ChiTietSanPham(70);
 ////        new RepositoryChiTietSanPham().updateSoLuong(ctsp, "AC1FF507-9966-4664-AD5B-4520ADCB7FB0");
@@ -430,4 +428,4 @@ public class sanphamRp implements isanphamrp {
 ////    }
 //
 
-}
+//}

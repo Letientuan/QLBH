@@ -25,10 +25,10 @@ public class ChatLieuImpl implements ChatLieuSer {
         return cls = spRep.getAll();
     }
 
-    @Override
-    public ChatLieu getOneCL(String ten) {
-        return spRep.getOneCL(ten);
-    }
+//    @Override
+//    public ChatLieu getOneCL(String ten) {
+//        return spRep.getOneCL(ten);
+//    }
 
     @Override
     public String add(ChatLieu ct) {

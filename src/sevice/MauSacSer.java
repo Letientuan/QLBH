@@ -14,7 +14,7 @@ import java.util.List;
 public interface MauSacSer {
     List<MauSac> getAll();
 
-    MauSac getOneMS(String ten);
+//    MauSac getOneMS(String ten);
 
     String add(MauSac ms);
 

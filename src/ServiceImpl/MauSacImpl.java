@@ -24,10 +24,10 @@ public class MauSacImpl implements MauSacSer {
         return listAll = spRep.getAll();
     }
 
-    @Override
-    public MauSac getOneMS(String ten) {
-        return spRep.getOneMau(ten);
-    }
+//    @Override
+//    public MauSac getOneMS(String ten) {
+//        return spRep.getOneMau(ten);
+//    }
 
     @Override
     public String add(MauSac ms) {

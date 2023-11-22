@@ -154,11 +154,86 @@ public class ChiTietSanPhamView extends javax.swing.JPanel {
         cbo_chatlieu.removeAllItems();
         listchatlieu.forEach(s -> boxModel3.addElement(s.getTenCL()));
     }
+ public boolean vailidate(){
+ 
+        if (txt_tensp.getText().isEmpty() || txt_gianhap.getText().isEmpty() || txt_giaban.getText().isEmpty() || txt_mota.getText().isEmpty()|| txt_soluong.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "vui lòng điền đầy đủ thông tin");
 
+            txt_tensp.requestFocus();
+            txt_gianhap.requestFocus();
+            txt_giaban.requestFocus();
+            txt_mota.requestFocus();
+            txt_soluong.requestFocus();
+            return false;
+        }
+
+        return true;
+    
+
+ }
+  public boolean checkTenl() {
+        if (txt_tensp.getText().length() <50) {
+            return true;
+        }
+        JOptionPane.showMessageDialog(this, "vui lòng nhập  Tên không quá 50 ký tự");
+        return false;
+    }
+  public void checkgia(){
+String masp = txt_masp.getText().trim();
+String tensp = txt_tensp.getText().trim();
+String mota = txt_mota.getText().trim();
+
+int slt;
+try {
+    slt = Integer.parseInt(txt_soluong.getText().trim());
+    if (slt < 0) {
+        // Handle the case where a negative quantity is entered
+       
+        return; // or throw an exception if needed
+    }
+} catch (NumberFormatException e) {
+    // Handle the case where the quantity is not a valid integer
+     JOptionPane.showMessageDialog(this,"số lượng phải >1000,và phải là số");
+    return; // or throw an exception if needed
+}
+
+int gianhap;
+try {
+    gianhap = Integer.parseInt(txt_gianhap.getText().trim());
+    if (gianhap < 0) {
+        // Handle the case where a negative purchase price is entered
+        
+        return; // or throw an exception if needed
+    }
+} catch (NumberFormatException e) {
+    // Handle the case where the purchase price is not a valid integer
+  JOptionPane.showMessageDialog(this,"giá nhập phải lớn hơn 1000,và phải là số");
+    return; // or throw an exception if needed
+}
+
+int giaban;
+try {
+    giaban = Integer.parseInt(txt_giaban.getText().trim());
+    if (giaban < 0 ){
+        // Handle the case where a negative sale price is entered
+      
+        return; // or throw an exception if needed
+    }
+    
+} catch (NumberFormatException e) {
+    // Handle the case where the sale price is not a valid integer
+    JOptionPane.showMessageDialog(this,"giá bán phải lớn hơn 0,và phải là số");
+    return; 
+}
+
+// If the code reaches here, it means all validations passed
+// You can proceed with using masp, tensp, mota, slt, gianhap, and giaban in your logic
+
+  }
     private int addSanPham() {
        
           
-             SanPham sp = new SanPham();
+            SanPham sp = new SanPham();
             String masp = txt_masp.getText();
             String tensp = txt_tensp.getText();
             String mota = txt_mota.getText();
@@ -923,9 +998,15 @@ String pathfile1;
     }//GEN-LAST:event_btnAnhActionPerformed
 
     private void btn_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addActionPerformed
-        addSanPham();
-        tk(-1);
-
+        try {
+            checkgia();
+        if(vailidate() == true && checkTenl()==true ){
+            addSanPham();
+            tk(-1);
+            JOptionPane.showConfirmDialog(this, "Thêm Thành công ");
+        }
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_btn_addActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -1002,6 +1083,7 @@ String pathfile1;
             khongconhang.setSelected(true);
         }
         jpane_anh.setIcon(new ImageIcon(String.valueOf(sp.getAnhSp())));
+        pathfile1 = sp.getAnhSp();
     }//GEN-LAST:event_tbl_sanphamMouseClicked
 
     private void cbo_mauItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbo_mauItemStateChanged
