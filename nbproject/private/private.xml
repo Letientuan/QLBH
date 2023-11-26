@@ -3,9 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/AN/Desktop/Temp1/QLBH/src/service/NhanVienService.java</file>
-            <file>file:/C:/Users/AN/Desktop/Temp1/QLBH/src/service/ChiTietSanPhamSer.java</file>
-            <file>file:/C:/Users/AN/Desktop/Temp1/QLBH/src/repository/sanphamRp.java</file>
+            <file>file:/C:/Users/AN/Desktop/QLBH/src/view/ViewDongSP.java</file>
+            <file>file:/C:/Users/AN/Desktop/QLBH/src/view/TrangChu2.java</file>
+            <file>file:/C:/Users/AN/Desktop/QLBH/src/view/NhaSanXat.java</file>
+            <file>file:/C:/Users/AN/Desktop/QLBH/src/view/HoaDonView.java</file>
+            <file>file:/C:/Users/AN/Desktop/QLBH/src/view/Login.java</file>
+            <file>file:/C:/Users/AN/Desktop/QLBH/src/entity/NhaSanXuat.java</file>
+            <file>file:/C:/Users/AN/Desktop/QLBH/src/view/ViewMauSac.java</file>
+            <file>file:/C:/Users/AN/Desktop/QLBH/src/view/ChiTietSanPhamView.java</file>
+            <file>file:/C:/Users/AN/Desktop/QLBH/src/repository/NSXRepository.java</file>
+            <file>file:/C:/Users/AN/Desktop/QLBH/src/repository/MauRepository.java</file>
+            <file>file:/C:/Users/AN/Desktop/QLBH/src/view/TrangChu.java</file>
         </group>
     </open-files>
 </project-private>

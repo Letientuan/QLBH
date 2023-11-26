@@ -72,7 +72,7 @@ public class NSXRepository {
             e.printStackTrace(System.out);
         }
         return check > 0;
-    }}
+    }
 //
 //    public boolean updateSanPham(NhaSanXuat kt, int ma) {
 //        int check = 0;
@@ -90,18 +90,18 @@ public class NSXRepository {
 //        return check > 0;
 //    }
 //
-//    public boolean deleteSanPham(String ten) {
-//        int check = 0;
-//        String query = "DELETE FROM [dbo].[NSX]"
-//                + "      WHERE ten = ?";
-//        try (Connection cnn = DBConnection.getConnection(); PreparedStatement ps = cnn.prepareStatement(query)) {
-//            ps.setObject(1, ten);
-//            check = ps.executeUpdate();
-//        } catch (Exception e) {
-//            e.printStackTrace(System.out);
-//        }
-//        return check > 0;
-//    }
+    public boolean deleteSanPham(String ten) {
+        int check = 0;
+        String query = "DELETE FROM [dbo].[NSX]"
+                + "      WHERE MaNsx = ?";
+        try (Connection cnn = DBConnection.getConnection(); PreparedStatement ps = cnn.prepareStatement(query)) {
+            ps.setObject(1, ten);
+            check = ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+        }
+        return check > 0;
+    }
 //
-//}
+}
     

@@ -9,6 +9,7 @@ package entity;
  * @author thong
  */
 public class NhaSanXuat {
+
     private Integer manhaSanXuat;
     private String tenNhaSanXuat;
 
@@ -36,10 +37,13 @@ public class NhaSanXuat {
         this.tenNhaSanXuat = tenNhaSanXuat;
     }
 
-   
+    public Object[] todataRow() {
+        return new Object[]{manhaSanXuat, tenNhaSanXuat};
+    }
+
     @Override
     public String toString() {
-        return  tenNhaSanXuat ;
+        return tenNhaSanXuat;
     }
-    
+
 }

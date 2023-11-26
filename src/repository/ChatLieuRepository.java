@@ -87,12 +87,12 @@ public class ChatLieuRepository {
         return check > 0;
     }
 
-    public boolean deleteChatLieu(String ten) {
+    public boolean deleteChatLieu(String ma) {
         int check = 0;
         String query = "DELETE FROM [dbo].[ChatLieu]"
-                + "      WHERE ten = ?";
+                + "      WHERE MaChatLieu = ?";
         try (Connection cnn = DBConnection.getConnection(); PreparedStatement ps = cnn.prepareStatement(query)) {
-            ps.setObject(1, ten);
+            ps.setObject(1, ma);
             check = ps.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace(System.out);

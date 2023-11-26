@@ -21,7 +21,7 @@ public class LoaiRepo {
 
     public List<DongSanPham> getAll() {
         String query = """
-                       select madongsp,ten from DongSP
+                       select MaDongSp,Ten from DongSP
                        """;
         try (Connection cnn = DBConnection.getConnection(); PreparedStatement ps = cnn.prepareStatement(query)) {
             List<DongSanPham> listSp = new ArrayList<>();
@@ -86,10 +86,10 @@ public class LoaiRepo {
         return check > 0;
     }
 
-    public boolean deleteSanPham(int ma) {
+    public boolean deleteSanPham(String ma) {
         int check = 0;
         String query = "DELETE FROM [dbo].[DongSP]"
-                + "      WHERE Ma = ?";
+                + "      WHERE MaDongSp = ?";
         try (Connection cnn = DBConnection.getConnection(); PreparedStatement ps = cnn.prepareStatement(query)) {
             ps.setObject(1, ma);
             check = ps.executeUpdate();

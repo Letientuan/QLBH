@@ -20,5 +20,5 @@ public interface DongSPSer {
 
     String update(DongSanPham dsp, int ma);
 
-    String delete(int ma);
+    String delete(String ma);
 }

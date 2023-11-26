@@ -82,13 +82,14 @@ public class TrangChu extends javax.swing.JFrame {
             .addGap(0, 758, Short.MAX_VALUE)
         );
 
-        jpnMenu.setBackground(new java.awt.Color(153, 0, 153));
+        jpnMenu.setBackground(new java.awt.Color(102, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Tempus Sans ITC", 3, 52)); // NOI18N
         jLabel1.setText("CuBo");
 
-        jpnBanHang.setBackground(new java.awt.Color(153, 0, 153));
+        jpnBanHang.setBackground(new java.awt.Color(102, 102, 255));
 
+        jlbBanHang.setBackground(new java.awt.Color(0, 102, 255));
         jlbBanHang.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         jlbBanHang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iImage/BanHang.png"))); // NOI18N
         jlbBanHang.setText("  Bán Hàng");
@@ -110,7 +111,7 @@ public class TrangChu extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        jpnSanPham.setBackground(new java.awt.Color(153, 0, 153));
+        jpnSanPham.setBackground(new java.awt.Color(102, 102, 255));
         jpnSanPham.setPreferredSize(new java.awt.Dimension(187, 68));
 
         jlbSanPham.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
@@ -134,7 +135,7 @@ public class TrangChu extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jpnHoaDon.setBackground(new java.awt.Color(153, 0, 153));
+        jpnHoaDon.setBackground(new java.awt.Color(102, 102, 255));
         jpnHoaDon.setPreferredSize(new java.awt.Dimension(187, 68));
 
         jlbHoaDon.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
@@ -158,7 +159,7 @@ public class TrangChu extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jpnNhanVien.setBackground(new java.awt.Color(153, 0, 153));
+        jpnNhanVien.setBackground(new java.awt.Color(102, 102, 255));
         jpnNhanVien.setPreferredSize(new java.awt.Dimension(187, 68));
 
         jlbNhanVien.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
@@ -179,7 +180,7 @@ public class TrangChu extends javax.swing.JFrame {
             .addComponent(jlbNhanVien, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
         );
 
-        jpnKhachHang.setBackground(new java.awt.Color(153, 0, 153));
+        jpnKhachHang.setBackground(new java.awt.Color(102, 102, 255));
         jpnKhachHang.setPreferredSize(new java.awt.Dimension(187, 68));
 
         jlbKhachHang.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
@@ -203,7 +204,7 @@ public class TrangChu extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jpnThongKe.setBackground(new java.awt.Color(153, 0, 153));
+        jpnThongKe.setBackground(new java.awt.Color(102, 102, 255));
         jpnThongKe.setPreferredSize(new java.awt.Dimension(187, 68));
 
         jlbThongKe.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
@@ -227,7 +228,7 @@ public class TrangChu extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jpnHoanTra.setBackground(new java.awt.Color(153, 0, 153));
+        jpnHoanTra.setBackground(new java.awt.Color(102, 102, 255));
         jpnHoanTra.setPreferredSize(new java.awt.Dimension(187, 68));
 
         jlbHoanTra.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
@@ -251,7 +252,7 @@ public class TrangChu extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        btnExit.setBackground(new java.awt.Color(153, 0, 153));
+        btnExit.setBackground(new java.awt.Color(51, 51, 255));
         btnExit.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iImage/toppng.com-shake-back-the-arrow-svg-icon-free-back-arrow-icon-980x984.png"))); // NOI18N
         btnExit.setText("Thoát");

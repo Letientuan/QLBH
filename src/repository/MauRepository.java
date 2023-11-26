@@ -91,7 +91,7 @@ public class MauRepository {
     public boolean deleteSanPham(int ma) {
         int check = 0;
         String query = "DELETE FROM [dbo].[MauSac]"
-                + "      WHERE Ma = ?";
+                + "      WHERE MaMau = ?";
         try (Connection cnn = DBConnection.getConnection(); PreparedStatement ps = cnn.prepareStatement(query)) {
             ps.setObject(1, ma);
             check = ps.executeUpdate();

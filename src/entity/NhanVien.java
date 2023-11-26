@@ -25,6 +25,12 @@ public class NhanVien {
     public NhanVien() {
     }
 
+    public NhanVien(String maNV, String tenNV) {
+        this.maNV = maNV;
+        this.tenNV = tenNV;
+    }
+    
+
     public NhanVien(String maNV, String tenNV, String gioiTinh, String ngaySinh, String diaChi, String sdt, String email, String taiKhoan, String matKhau, String chucVu, Integer trangThai) {
         this.maNV = maNV;
         this.tenNV = tenNV;

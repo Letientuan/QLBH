@@ -27,6 +27,11 @@ public class SanPham {
     public SanPham() {
     }
 
+    public SanPham(String maSP) {
+        this.maSP = maSP;
+    }
+
+    
     public SanPham(String maSP, int nsx, int mamauSac, int dongSP, int chatLieu, String TenSP, String moTa, Integer soLuongTon, Double giaNhap, Double giaBan, String anhSp, String size, int trangthai) {
         this.maSP = maSP;
         this.nsx = nsx;

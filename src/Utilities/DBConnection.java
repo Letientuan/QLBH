@@ -16,7 +16,7 @@ public class DBConnection {
 
     public static final String HOSTNAME = "DESKTOP-QNIGL6E";
     public static final String PORT = "1433";
-    public static final String DBNAME = "QLBH_AO_THUN_NAM";
+    public static final String DBNAME = "QLBH_CB";
     public static final String USERNAME = "sa";
     public static final String PASSWORD = "123456";
 

@@ -46,7 +46,7 @@ public class DongSPImpl implements DongSPSer {
     }
 
     @Override
-    public String delete(int ma) {
+    public String delete(String ma) {
         if (spRep.deleteSanPham(ma)) {
             return "Delete thành công";
         }

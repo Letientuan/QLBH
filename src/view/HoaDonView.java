@@ -4,6 +4,12 @@
  */
 package view;
 
+import ServiceImpl.HoaDonServiceImpl;
+import entity.HoaDon;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+import service.HoaDonService;
+
 /**
  *
  * @author thong
@@ -13,8 +19,27 @@ public class HoaDonView extends javax.swing.JPanel {
     /**
      * Creates new form HoaDonView
      */
+    private HoaDonServiceImpl hoaDonServiceImpl = new HoaDonService();
+    DefaultTableModel tblModel = new DefaultTableModel();
+    private List<HoaDon> list = hoaDonServiceImpl.getListHD();
+
     public HoaDonView() {
         initComponents();
+        load(list);
+    }
+
+    public void load(List<HoaDon> hoaDons) {
+        tblModel = (DefaultTableModel) tblHoaDon.getModel();
+        tblModel.setRowCount(0);
+        for (HoaDon x : hoaDons) {
+            Object row[] = new Object[]{
+                x.getMaHD(), x.getManhanVien().getTenNV(), x.getMakhachHang().getTenKH(), x.getTongTien(), 
+                x.getThanhToan(), x.getChietKhau(),x.getNgayTao(), x.getPhuongThucThanhToan(),  x.getNgayThanhToan(), 
+                x.getTinhTrang() == 1 ? "Đã thanh toán" : "Chưa thanh toán", x.getGhiChu()
+            };
+            tblModel.addRow(row);
+        }
+        list = hoaDons;
     }
 
     /**
@@ -35,7 +60,7 @@ public class HoaDonView extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tblHoaDon = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -90,18 +115,18 @@ public class HoaDonView extends javax.swing.JPanel {
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tblHoaDon.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Mã hóa đơn", "Mã NV", "Tên NV", "Mã KH", "Tên KH", "Tổng tiền", "Thanh Toán", "Tiền thừa", "Hình thức thanh toán", "Ngày tạo hóa đơn", "Trạng thái", "Ghi Chú"
+                "Mã hóa đơn", "Mã NV", "Tên NV", "Mã KH", "Tên KH", "Tổng tiền", "Thanh Toán", "Ngày tạo", "Hình thức thanh toán", "Ngày thanh toán", "Trạng thái", "Ghi Chú", "Chiết Khấu"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(tblHoaDon);
 
         jLabel3.setText("Lọc hóa đơn");
 
@@ -179,18 +204,21 @@ public class HoaDonView extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(7, 7, 7)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(24, 24, 24)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -214,7 +242,7 @@ public class HoaDonView extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTable tblHoaDon;
     // End of variables declaration//GEN-END:variables
 }

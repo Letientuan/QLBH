@@ -156,141 +156,135 @@ public class ChiTietSanPhamView extends javax.swing.JPanel {
     }
 
     private int addSanPham() {
-       
-          
-             SanPham sp = new SanPham();
-            String masp = txt_masp.getText();
-            String tensp = txt_tensp.getText();
-            String mota = txt_mota.getText();
-            int slt = Integer.valueOf(txt_soluong.getText());
-            Double gianhap = Double.valueOf(txt_gianhap.getText());
-            Double giaban = Double.valueOf(txt_giaban.getText());
 
-            int tt = Integer.parseInt(txt_soluong.getText());
+        SanPham sp = new SanPham();
+        String masp = txt_masp.getText();
+        String tensp = txt_tensp.getText();
+        String mota = txt_mota.getText();
+        int slt = Integer.valueOf(txt_soluong.getText());
+        Double gianhap = Double.valueOf(txt_gianhap.getText());
+        Double giaban = Double.valueOf(txt_giaban.getText());
 
-            if (tt == 0) {
-                tt = 0;
-                sp.setTrangthai(tt);
-            } else {
-                tt = 1;
-                sp.setTrangthai(tt);
-            }
+        int tt = Integer.parseInt(txt_soluong.getText());
 
-            String nsx = cbo_hang.getSelectedItem().toString();
-            for (NhaSanXuat n : listnsx) {
-                if (n.getTenNhaSanXuat()== nsx) {
-                    int nhasx = n.getManhaSanXuat();
-                    sp.setNsx(nhasx);
-                }
-            }
-
-            String mausac = cbo_mau.getSelectedItem().toString();
-            for (MauSac n : lisstmau) {
-                if (n.getTenMS() == mausac) {
-                    int mau = n.getMaMS();
-                    sp.setMamauSac(mau);
-                }
-            }
-
-            String dong = cbo_dongsp.getSelectedItem().toString();
-            for (DongSanPham d : listdong) {
-                if (d.getTenDongSP().equalsIgnoreCase(dong)) {
-                    int dong1 = d.getMaDongSP();
-                    sp.setDongSP(dong1);
-                }
-            }
-
-            String chatlieu = cbo_chatlieu.getSelectedItem().toString();
-            for (ChatLieu n : listchatlieu) {
-                if (n.getTenCL() == chatlieu) {
-                    int cl = n.getMaCL();
-                    sp.setChatLieu(cl);
-
-                }
-            }
-            sp.setMaSP(masp);
-            sp.setTenSP(tensp);
-            sp.setGiaBan(giaban);
-            sp.setGiaNhap(gianhap);
-            sp.setMoTa(mota);
-            sp.setSoLuongTon(slt);
-            sp.setAnhSp(pathfile1);
-
-            
-            sp.setSize(size);
-            spsv.add(sp);
-            return 0;
+        if (tt == 0) {
+            tt = 0;
+            sp.setTrangthai(tt);
+        } else {
+            tt = 1;
+            sp.setTrangthai(tt);
         }
 
-        
-    
+        String nsx = cbo_hang.getSelectedItem().toString();
+        for (NhaSanXuat n : listnsx) {
+            if (n.getTenNhaSanXuat() == nsx) {
+                int nhasx = n.getManhaSanXuat();
+                sp.setNsx(nhasx);
+            }
+        }
+
+        String mausac = cbo_mau.getSelectedItem().toString();
+        for (MauSac n : lisstmau) {
+            if (n.getTenMS() == mausac) {
+                int mau = n.getMaMS();
+                sp.setMamauSac(mau);
+            }
+        }
+
+        String dong = cbo_dongsp.getSelectedItem().toString();
+        for (DongSanPham d : listdong) {
+            if (d.getTenDongSP().equalsIgnoreCase(dong)) {
+                int dong1 = d.getMaDongSP();
+                sp.setDongSP(dong1);
+            }
+        }
+
+        String chatlieu = cbo_chatlieu.getSelectedItem().toString();
+        for (ChatLieu n : listchatlieu) {
+            if (n.getTenCL() == chatlieu) {
+                int cl = n.getMaCL();
+                sp.setChatLieu(cl);
+
+            }
+        }
+        sp.setMaSP(masp);
+        sp.setTenSP(tensp);
+        sp.setGiaBan(giaban);
+        sp.setGiaNhap(gianhap);
+        sp.setMoTa(mota);
+        sp.setSoLuongTon(slt);
+        sp.setAnhSp(pathfile1);
+
+        sp.setSize(size);
+        spsv.add(sp);
+        return 0;
+    }
 
     public void updetesp() {
-         
-       
-            SanPham sp = new SanPham();
-            String masp = txt_masp.getText();
-            String tensp = txt_tensp.getText();
-            String mota = txt_mota.getText();
-            int slt = Integer.valueOf(txt_soluong.getText());
-            Double gianhap = Double.valueOf(txt_gianhap.getText());
-            Double giaban = Double.valueOf(txt_giaban.getText());
 
-            int tt = Integer.parseInt(txt_soluong.getText());
+        SanPham sp = new SanPham();
+        String masp = txt_masp.getText();
+        String tensp = txt_tensp.getText();
+        String mota = txt_mota.getText();
+        int slt = Integer.valueOf(txt_soluong.getText());
+        Double gianhap = Double.valueOf(txt_gianhap.getText());
+        Double giaban = Double.valueOf(txt_giaban.getText());
 
-            if (tt == 0) {
-                tt = 0;
-                sp.setTrangthai(tt);
-            } else {
-                tt = 1;
-                sp.setTrangthai(tt);
+        int tt = Integer.parseInt(txt_soluong.getText());
+
+        if (tt == 0) {
+            tt = 0;
+            sp.setTrangthai(tt);
+        } else {
+            tt = 1;
+            sp.setTrangthai(tt);
+        }
+
+        String nsx = cbo_hang.getSelectedItem().toString();
+        for (NhaSanXuat n : listnsx) {
+            if (n.getTenNhaSanXuat() == nsx) {
+                int nhasx = n.getManhaSanXuat();
+                sp.setNsx(nhasx);
             }
+        }
 
-            String nsx = cbo_hang.getSelectedItem().toString();
-            for (NhaSanXuat n : listnsx) {
-                if (n.getTenNhaSanXuat() == nsx) {
-                    int nhasx = n.getManhaSanXuat();
-                    sp.setNsx(nhasx);
-                }
+        String mausac = cbo_mau.getSelectedItem().toString();
+        for (MauSac n : lisstmau) {
+            if (n.getTenMS() == mausac) {
+                int mau = n.getMaMS();
+                sp.setMamauSac(mau);
             }
+        }
 
-            String mausac = cbo_mau.getSelectedItem().toString();
-            for (MauSac n : lisstmau) {
-                if (n.getTenMS() == mausac) {
-                    int mau = n.getMaMS();
-                    sp.setMamauSac(mau);
-                }
+        String dong = cbo_dongsp.getSelectedItem().toString();
+        for (DongSanPham d : listdong) {
+            if (d.getTenDongSP().equalsIgnoreCase(dong)) {
+                int dong1 = d.getMaDongSP();
+                sp.setDongSP(dong1);
             }
+        }
 
-            String dong = cbo_dongsp.getSelectedItem().toString();
-            for (DongSanPham d : listdong) {
-                if (d.getTenDongSP().equalsIgnoreCase(dong)) {
-                    int dong1 = d.getMaDongSP();
-                    sp.setDongSP(dong1);
-                }
+        String chatlieu = cbo_chatlieu.getSelectedItem().toString();
+        for (ChatLieu n : listchatlieu) {
+            if (n.getTenCL() == chatlieu) {
+                int cl = n.getMaCL();
+                sp.setChatLieu(cl);
+
             }
+        }
+        sp.setMaSP(masp);
+        sp.setTenSP(tensp);
+        sp.setGiaBan(giaban);
+        sp.setGiaNhap(gianhap);
+        sp.setMoTa(mota);
+        sp.setSoLuongTon(slt);
+        sp.setAnhSp(pathfile1);
+        sp.setSize(size);
 
-            String chatlieu = cbo_chatlieu.getSelectedItem().toString();
-            for (ChatLieu n : listchatlieu) {
-                if (n.getTenCL() == chatlieu) {
-                    int cl = n.getMaCL();
-                    sp.setChatLieu(cl);
+        spsv.update(sp);
+        tk(-1);
+        JOptionPane.showConfirmDialog(this, "updete thành công sản phẩm có mã là :" + masp);
 
-                }
-            }
-            sp.setMaSP(masp);
-            sp.setTenSP(tensp);
-            sp.setGiaBan(giaban);
-            sp.setGiaNhap(gianhap);
-            sp.setMoTa(mota);
-            sp.setSoLuongTon(slt);
-            sp.setAnhSp(pathfile1);
-            sp.setSize(size);
-
-            spsv.update(sp);
-            tk(-1);
-            JOptionPane.showConfirmDialog(this, "updete thành công sản phẩm có mã là :" + masp);
-        
     }
 
     public void tk(int status) {
@@ -298,11 +292,13 @@ public class ChiTietSanPhamView extends javax.swing.JPanel {
         List<SanPhammd> output = spsv.getall();
         loadTable(output);
     }
-    public void timkiem(){
-        String ma=txt_timkiem.getText();       
-           List<SanPhammd> list= spsv.Timkiem(ma,tt);
-           loadTable(list);     
+
+    public void timkiem() {
+        String ma = txt_timkiem.getText();
+        List<SanPhammd> list = spsv.Timkiem(ma, tt);
+        loadTable(list);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -909,7 +905,7 @@ String pathfile1;
         int returnValue = f.showOpenDialog(this);
         if (returnValue == JFileChooser.APPROVE_OPTION) {
             File ftenanh = f.getSelectedFile();
-              String pathfile = ftenanh.getAbsolutePath();
+            String pathfile = ftenanh.getAbsolutePath();
             pathfile1 = ftenanh.getAbsolutePath().replace("//", "--");
             System.out.println(pathfile1);
             BufferedImage b;
@@ -936,19 +932,45 @@ String pathfile1;
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void btnChatLieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChatLieuActionPerformed
-
+        if(mauSac == null){
+            mauSac = new ViewMauSac();
+            mauSac.setVisible(true);
+        }else{
+            mauSac.toFront();
+        }
     }//GEN-LAST:event_btnChatLieuActionPerformed
 
     private void btnChatLieu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChatLieu1ActionPerformed
-        // TODO add your handling code here:
+        if(dongsp == null){
+            dongsp = new ViewDongSP();
+            dongsp.setVisible(true);
+        }else{
+            dongsp.toFront();
+        }
     }//GEN-LAST:event_btnChatLieu1ActionPerformed
-
+    private static NhaSanXat nhaSanXatForm = null;
+    private static ViewChatLieu chatLieu = null;
+    private static ViewDongSP dongsp = null;
+    private static ViewMauSac mauSac = null;
     private void btnChatLieu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChatLieu2ActionPerformed
-        // TODO add your handling code here:
+        if (nhaSanXatForm == null) {
+            nhaSanXatForm = new NhaSanXat();
+            nhaSanXatForm.setVisible(true);
+        } else {
+
+            nhaSanXatForm.toFront();
+        }
+
     }//GEN-LAST:event_btnChatLieu2ActionPerformed
 
     private void btnChatLieu3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChatLieu3ActionPerformed
-        // TODO add your handling code here:
+         if (chatLieu == null) {
+            chatLieu = new ViewChatLieu();
+            chatLieu.setVisible(true);
+        } else {
+
+            chatLieu.toFront();
+        }
     }//GEN-LAST:event_btnChatLieu3ActionPerformed
 
     private void tbl_sanphamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_sanphamMouseClicked
@@ -1064,10 +1086,9 @@ String pathfile1;
     private void cbo_sizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbo_sizeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbo_sizeActionPerformed
- private int tt = -1;
+    private int tt = -1;
     private void cbo_loctrangthaiItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbo_loctrangthaiItemStateChanged
-       String f = cbo_loctrangthai.getSelectedItem().toString();
-       
+        String f = cbo_loctrangthai.getSelectedItem().toString();
 
         switch (f) {
             case "Còn Hàng":
@@ -1085,7 +1106,7 @@ String pathfile1;
         String ma = txt_timkiem.getText();
 //        List<SanPhammd> output = spsv.Timkiem(ma, tt);
 //        loadTable(output);
-      
+
     }//GEN-LAST:event_cbo_loctrangthaiItemStateChanged
 
     private void txt_timkiemCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txt_timkiemCaretUpdate

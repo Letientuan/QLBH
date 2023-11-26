@@ -16,38 +16,32 @@ public class HoaDon {
     private String ngayTao;
     private String ngayThanhToan;
     private Integer tinhTrang;
-    private String diaChi;
-    private String sdt;
+    private String ghiChu;
+    private Double chietKhau;
     private Double tongTien;
-    private Double tienThua;
+    private Double thanhToan;
     private String phuongThucThanhToan;
 
     public HoaDon() {
     }
 
-    public HoaDon(Long maHD, KhachHang makhachHang, NhanVien manhanVien, String ngayTao, String ngayThanhToan, Integer tinhTrang, String diaChi, String sdt, Double tongTien, Double tienThua, String phuongThucThanhToan) {
+    public HoaDon(Long maHD) {
+        this.maHD = maHD;
+    }
+    
+
+    public HoaDon(Long maHD, KhachHang makhachHang, NhanVien manhanVien, String ngayTao, String ngayThanhToan, Integer tinhTrang, String ghiChu, Double chietKhau, Double tongTien, Double thanhToan, String phuongThucThanhToan) {
         this.maHD = maHD;
         this.makhachHang = makhachHang;
         this.manhanVien = manhanVien;
         this.ngayTao = ngayTao;
         this.ngayThanhToan = ngayThanhToan;
         this.tinhTrang = tinhTrang;
-        this.diaChi = diaChi;
-        this.sdt = sdt;
+        this.ghiChu = ghiChu;
+        this.chietKhau = chietKhau;
         this.tongTien = tongTien;
-        this.tienThua = tienThua;
+        this.thanhToan = thanhToan;
         this.phuongThucThanhToan = phuongThucThanhToan;
-    }
-
-    public HoaDon(Long maHD, KhachHang makhachHang, NhanVien manhanVien, String ngayTao) {
-        this.maHD = maHD;
-        this.makhachHang = makhachHang;
-        this.manhanVien = manhanVien;
-        this.ngayTao = ngayTao;
-    }
-
-    public HoaDon(Long maHD) {
-        this.maHD = maHD;
     }
 
     public Long getMaHD() {
@@ -98,20 +92,20 @@ public class HoaDon {
         this.tinhTrang = tinhTrang;
     }
 
-    public String getDiaChi() {
-        return diaChi;
+    public String getGhiChu() {
+        return ghiChu;
     }
 
-    public void setDiaChi(String diaChi) {
-        this.diaChi = diaChi;
+    public void setGhiChu(String ghiChu) {
+        this.ghiChu = ghiChu;
     }
 
-    public String getSdt() {
-        return sdt;
+    public Double getChietKhau() {
+        return chietKhau;
     }
 
-    public void setSdt(String sdt) {
-        this.sdt = sdt;
+    public void setChietKhau(Double chietKhau) {
+        this.chietKhau = chietKhau;
     }
 
     public Double getTongTien() {
@@ -122,12 +116,12 @@ public class HoaDon {
         this.tongTien = tongTien;
     }
 
-    public Double getTienThua() {
-        return tienThua;
+    public Double getThanhToan() {
+        return thanhToan;
     }
 
-    public void setTienThua(Double tienThua) {
-        this.tienThua = tienThua;
+    public void setThanhToan(Double thanhToan) {
+        this.thanhToan = thanhToan;
     }
 
     public String getPhuongThucThanhToan() {
@@ -137,6 +131,6 @@ public class HoaDon {
     public void setPhuongThucThanhToan(String phuongThucThanhToan) {
         this.phuongThucThanhToan = phuongThucThanhToan;
     }
+
     
-  
 }
