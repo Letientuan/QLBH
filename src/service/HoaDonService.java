@@ -4,10 +4,10 @@
  */
 package service;
 
-import entity.HoaDon;
-import entity.HoaDonChiTiet;
+import entity.entities.HoaDonAn;
+import entity.entities.HoaDonChiTietAn;
 import java.util.List;
-import repository.HoaDonRepository;
+import repository.HoaDonRepositoryAn;
 import ServiceImpl.HoaDonServiceImpl;
 
 /**
@@ -16,30 +16,30 @@ import ServiceImpl.HoaDonServiceImpl;
  */
 public class HoaDonService implements HoaDonServiceImpl {
 
-    private HoaDonRepository hdrepo = new HoaDonRepository();
+    private HoaDonRepositoryAn hdrepo = new HoaDonRepositoryAn();
 
     @Override
-    public List<HoaDon> getListHD() {
+    public List<HoaDonAn> getListHD() {
         return hdrepo.getListHD();
     }
 
     @Override
-    public List<HoaDon> searchListHD(Long maHD) {
+    public List<HoaDonAn> searchListHD(Long maHD) {
         return hdrepo.searchListHD(maHD);
     }
 
     @Override
-    public List<HoaDon> searchTinhTrang(int tinhTrang) {
+    public List<HoaDonAn> searchTinhTrang(int tinhTrang) {
         return hdrepo.searchTinhTrang(tinhTrang);
     }
 
     @Override
-    public List<HoaDon> searchNgay(String ngayTao, String ngaythanhToan) {
+    public List<HoaDonAn> searchNgay(String ngayTao, String ngaythanhToan) {
         return hdrepo.searchNgay(ngayTao, ngaythanhToan);
     }
 
     @Override
-    public List<HoaDonChiTiet> listHDCTGetHD(Long maHoaD) {
+    public List<HoaDonChiTietAn> listHDCTGetHD(Long maHoaD) {
         return hdrepo.listHDCTGetHD(maHoaD);
     }
 }

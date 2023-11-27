@@ -2,13 +2,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package entity;
+package entity.entities;
+
+import entity.KhachHang;
+import entity.NhanVien;
 
 /**
  *
  * @author thong
  */
-public class HoaDon {
+public class HoaDonAn {
     
     private Long maHD;
     private KhachHang makhachHang;
@@ -22,15 +25,15 @@ public class HoaDon {
     private Double thanhToan;
     private String phuongThucThanhToan;
 
-    public HoaDon() {
+    public HoaDonAn() {
     }
 
-    public HoaDon(Long maHD) {
+    public HoaDonAn(Long maHD) {
         this.maHD = maHD;
     }
     
 
-    public HoaDon(Long maHD, KhachHang makhachHang, NhanVien manhanVien, String ngayTao, String ngayThanhToan, Integer tinhTrang, String ghiChu, Double chietKhau, Double tongTien, Double thanhToan, String phuongThucThanhToan) {
+    public HoaDonAn(Long maHD, KhachHang makhachHang, NhanVien manhanVien, String ngayTao, String ngayThanhToan, Integer tinhTrang, String ghiChu, Double chietKhau, Double tongTien, Double thanhToan, String phuongThucThanhToan) {
         this.maHD = maHD;
         this.makhachHang = makhachHang;
         this.manhanVien = manhanVien;

@@ -6,8 +6,8 @@ package repository;
 
 import Utilities.DBConnection;
 import entity.ChiTietSanPham;
-import entity.HoaDon;
-import entity.HoaDonChiTiet;
+import entity.entities.HoaDonAn;
+import entity.entities.HoaDonChiTietAn;
 import entity.KhachHang;
 import entity.NhanVien;
 import entity.SanPham;
@@ -24,11 +24,11 @@ import java.util.logging.Logger;
  *
  * @author thong
  */
-public class HoaDonRepository {
+public class HoaDonRepositoryAn {
 
-    public List<HoaDon> getListHD() {
-        List<HoaDon> listHD = new ArrayList<>();
-        String sql = "select MaHoaDon, KhachHang.MaKhachHang as 'IdKH',KhachHang.TenKhachHang as'TenKH',NhanVien.MaNhanVien as'maNV', NhanVien.TenNhanVien as'tenNV',NgayTao,NgayThanhToan,TinhTrang,GhiChu,Tongtien,Chietkhau,ThanhToan,PhuongThucThanhToan\n"
+    public List<HoaDonAn> getListHD() {
+        List<HoaDonAn> listHD = new ArrayList<>();
+        String sql = "select MaHoaDon, KhachHang.MaKhachHang as 'maKH',KhachHang.TenKhachHang as'TenKH',NhanVien.MaNhanVien as'maNV', NhanVien.TenNhanVien as'tenNV',NgayTao,NgayThanhToan,TinhTrang,GhiChu,Tongtien,Chietkhau,ThanhToan,PhuongThucThanhToan\n"
                 + "from HoaDon join NhanVien on HoaDon.IdNV = NhanVien.MaNhanVien\n"
                 + "			join KhachHang on HoaDon.IdKH = KhachHang.MaKhachHang";
         Connection conn = DBConnection.getConnection();
@@ -38,7 +38,7 @@ public class HoaDonRepository {
             while (rs.next()) {
                 KhachHang hang = new KhachHang(rs.getString("maKH"), rs.getString("TenKH"));
                 NhanVien nhanVien = new NhanVien(rs.getString("maNV"), rs.getString("tenNV"));
-                listHD.add(new HoaDon(rs.getLong("MaHoaDon"), hang, nhanVien,
+                listHD.add(new HoaDonAn(rs.getLong("MaHoaDon"), hang, nhanVien,
                         rs.getString("NgayTao"),
                         rs.getString("NgayThanhToan"),
                         rs.getInt("TinhTrang"),
@@ -46,7 +46,7 @@ public class HoaDonRepository {
                         rs.getDouble("ChietKhau"),
                         rs.getDouble("TongTien"),
                         rs.getDouble("ThanhToan"),
-                        rs.getString("PhuongThucThanhToan")   
+                        rs.getString("PhuongThucThanhToan")
                 ));
             }
             System.out.println(sql);
@@ -57,9 +57,9 @@ public class HoaDonRepository {
         return listHD;
     }
 
-    public List<HoaDon> searchListHD(Long maHD) {
-        List<HoaDon> listHD = new ArrayList<>();
-        String sql = "select MaHoaDon, KhachHang.MaKhachHang as 'maKH',KhachHang.TenKhachHang as'TenKH',NhanVien.MaNhanVien as'maNV', NhanVien.TenNhanVien as'tenNV',NgayTao,NgayThanhToan,TongTien,ThanhToan,TienThua,PhuongThucThanhToan,TinhTrang,GhiChu\n"
+    public List<HoaDonAn> searchListHD(Long maHD) {
+        List<HoaDonAn> listHD = new ArrayList<>();
+        String sql = "select MaHoaDon, KhachHang.MaKhachHang as 'maKH',KhachHang.TenKhachHang as'TenKH',NhanVien.MaNhanVien as'maNV', NhanVien.TenNhanVien as'tenNV',NgayTao,NgayThanhToan,TinhTrang,GhiChu,Tongtien,Chietkhau,ThanhToan,PhuongThucThanhToan\n"
                 + "from HoaDon join NhanVien on HoaDon.IdNV = NhanVien.MaNhanVien\n"
                 + "			join KhachHang on HoaDon.IdKH = KhachHang.MaKhachHang\n"
                 + "where MaHoaDon = ?";
@@ -71,7 +71,7 @@ public class HoaDonRepository {
             while (rs.next()) {
                 KhachHang hang = new KhachHang(rs.getString("maKH"), rs.getString("TenKH"));
                 NhanVien nhanVien = new NhanVien(rs.getString("maNV"), rs.getString("tenNV"));
-                listHD.add(new HoaDon(rs.getLong("MaHoaDon"), hang, nhanVien,
+                listHD.add(new HoaDonAn(rs.getLong("MaHoaDon"), hang, nhanVien,
                         rs.getString("NgayTao"),
                         rs.getString("NgayThanhToan"),
                         rs.getInt("TinhTrang"),
@@ -83,15 +83,15 @@ public class HoaDonRepository {
                 ));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(HoaDonRepository.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(HoaDonRepositoryAn.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return listHD;
     }
 
-    public List<HoaDon> searchTinhTrang(int tinhTrang) {
-        List<HoaDon> listHD = new ArrayList<>();
-        String sql = "select MaHoaDon, KhachHang.MaKhachHang as 'maKH',KhachHang.TenKhachHang as'TenKH',NhanVien.MaNhanVien as'maNV', NhanVien.TenNhanVien as'tenNV',NgayTao,NgayThanhToan,TongTien,ThanhToan,TienThua,PhuongThucThanhToan,TinhTrang,GhiChu  \n"
+    public List<HoaDonAn> searchTinhTrang(int tinhTrang) {
+        List<HoaDonAn> listHD = new ArrayList<>();
+        String sql = "select MaHoaDon, KhachHang.MaKhachHang as 'maKH',KhachHang.TenKhachHang as'TenKH',NhanVien.MaNhanVien as'maNV', NhanVien.TenNhanVien as'tenNV',NgayTao,NgayThanhToan,TinhTrang,GhiChu,Tongtien,Chietkhau,ThanhToan,PhuongThucThanhToan \n"
                 + "from HoaDon join NhanVien on HoaDon.IdNV = NhanVien.MaNhanVien\n"
                 + "			join KhachHang on HoaDon.IdKH = KhachHang.MaKhachHang\n"
                 + "where TinhTrang = ?";
@@ -103,7 +103,7 @@ public class HoaDonRepository {
             while (rs.next()) {
                 KhachHang hang = new KhachHang(rs.getString("maKH"), rs.getString("TenKH"));
                 NhanVien nhanVien = new NhanVien(rs.getString("maNV"), rs.getString("tenNV"));
-                listHD.add(new HoaDon(rs.getLong("MaHoaDon"), hang, nhanVien,
+                listHD.add(new HoaDonAn(rs.getLong("MaHoaDon"), hang, nhanVien,
                         rs.getString("NgayTao"),
                         rs.getString("NgayThanhToan"),
                         rs.getInt("TinhTrang"),
@@ -115,18 +115,20 @@ public class HoaDonRepository {
                 ));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(HoaDonRepository.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace(System.out);
+            Logger.getLogger(HoaDonRepositoryAn.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return listHD;
     }
 
-    public List<HoaDon> searchNgay(String ngayTao, String ngaythanhToan) {
-        List<HoaDon> listHD = new ArrayList<>();
-        String sql = "select MaHoaDon, KhachHang.MaKhachHang as 'maKH',KhachHang.TenKhachHang as'TenKH',NhanVien.MaNhanVien as'maNV', NhanVien.TenNhanVien as'tenNV',NgayTao,NgayThanhToan,TongTien,ThanhToan,TienThua,PhuongThucThanhToan,TinhTrang,GhiChu  \n"
+    public List<HoaDonAn> searchNgay(String ngayTao, String ngaythanhToan) {
+        List<HoaDonAn> listHD = new ArrayList<>();
+        String sql = "select MaHoaDon, KhachHang.MaKhachHang as 'maKH',KhachHang.TenKhachHang as'TenKH',NhanVien.MaNhanVien as'maNV', NhanVien.TenNhanVien as'tenNV',\n"
+                + "NgayTao,NgayThanhToan,TinhTrang,GhiChu,Tongtien,Chietkhau,ThanhToan,PhuongThucThanhToan \n"
                 + "from HoaDon join NhanVien on HoaDon.IdNV = NhanVien.MaNhanVien\n"
-                + "			join KhachHang on HoaDon.IdKH = KhachHang.MaKhachHang\n"
-                + "where  NgayTao between ? and ? ";
+                + "				join KhachHang on HoaDon.IdKH = KhachHang.MaKhachHang \n"
+                + "				where  NgayTao between ? and ?";
         Connection conn = DBConnection.getConnection();
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -136,7 +138,7 @@ public class HoaDonRepository {
             while (rs.next()) {
                 KhachHang hang = new KhachHang(rs.getString("maKH"), rs.getString("TenKH"));
                 NhanVien nhanVien = new NhanVien(rs.getString("maNV"), rs.getString("tenNV"));
-                listHD.add(new HoaDon(rs.getLong("MaHoaDon"), hang, nhanVien,
+                listHD.add(new HoaDonAn(rs.getLong("MaHoaDon"), hang, nhanVien,
                         rs.getString("NgayTao"),
                         rs.getString("NgayThanhToan"),
                         rs.getInt("TinhTrang"),
@@ -146,38 +148,40 @@ public class HoaDonRepository {
                         rs.getDouble("ThanhToan"),
                         rs.getString("PhuongThucThanhToan")
                 ));
+                System.out.println(sql);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(HoaDonRepository.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(HoaDonRepositoryAn.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return listHD;
     }
 
-    public List<HoaDonChiTiet> listHDCTGetHD(Long maHoaD) {
-        List<HoaDonChiTiet> chiTiets = new ArrayList<>();
-        String sql = "select MaHDCT,hdct.MaHoaDon,MaChiTietSP,sp.Ten,SoLuong,DonGia,sum(SoLuong*DonGia) as thanhtien\n"
-                + "from HoaDonChiTiet as hdct join HoaDon as hd on hdct.MaHoaDon = hd.MaHoaDon\n"
-                + "						join ChiTietSP as ctsp on hdct.MaChiTietSP = ctsp.MaCTSP\n"
-                + "						join SanPham as sp on ctsp.MaSP = sp.Ma\n"
-                + "where hdct.MaHoaDon = ?\n"
-                + "group by MaHDCT,hdct.MaHoaDon,MaChiTietSP,SoLuong,DonGia,sp.Ten";
+    public List<HoaDonChiTietAn> listHDCTGetHD(Long maHoaD) {
+        List<HoaDonChiTietAn> chiTiets = new ArrayList<>();
+        String sql = "select MaHDCT, hdct.MaHoaDon, ctsp.MaSP, ctsp.TenSP, SoLuong, DonGia, sum(SoLuong * DonGia) as thanhtien "
+                + "from HoaDonChiTiet as hdct join HoaDon as hd on hdct.MaHoaDon = hd.MaHoaDon join SanPham as ctsp on hdct.MaSP = ctsp.MaSP "
+                + "where hdct.MaHoaDon = ? "
+                + "group by MaHDCT, hdct.MaHoaDon, ctsp.MaSP, SoLuong, DonGia, ctsp.TenSP;";
         Connection conn = DBConnection.getConnection();
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setLong(1, maHoaD);
+            ps.setLong(1, maHoaD); // Thiết lập giá trị cho tham số ? trong câu truy vấn
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                HoaDon don = new HoaDon(rs.getLong("MaHoaDon"));
-                SanPham sanPham = new SanPham(rs.getString("MaChiTietSP"));
-                chiTiets.add(new HoaDonChiTiet(rs.getLong("MaHDCT"), don, 
+                HoaDonAn don = new HoaDonAn(rs.getLong("MaHoaDon"));
+                SanPham sanPham = new SanPham(rs.getString("MaSP"));
+                chiTiets.add(new HoaDonChiTietAn(rs.getLong("MaHDCT"), don,
                         sanPham, rs.getInt("SoLuong"),
-                        rs.getDouble("DonGia"), rs.getString("Ten")));
+                        rs.getDouble("DonGia"), rs.getString("TenSP"), rs.getDouble("thanhtien")));
             }
+            System.out.println(sql);
         } catch (SQLException ex) {
-            Logger.getLogger(HoaDonRepository.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println();
+            Logger.getLogger(HoaDonRepositoryAn.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return chiTiets;
     }
+
 }

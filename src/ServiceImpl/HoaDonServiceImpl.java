@@ -4,8 +4,8 @@
  */
 package ServiceImpl;
 
-import entity.HoaDon;
-import entity.HoaDonChiTiet;
+import entity.entities.HoaDonAn;
+import entity.entities.HoaDonChiTietAn;
 import java.util.List;
 
 /**
@@ -14,13 +14,13 @@ import java.util.List;
  */
 public interface HoaDonServiceImpl {
 
-    List<HoaDon> getListHD();
+    List<HoaDonAn> getListHD();
 
-    List<HoaDon> searchListHD(Long maHD);
+    List<HoaDonAn> searchListHD(Long maHD);
 
-    List<HoaDon> searchTinhTrang(int tinhTrang);
+    List<HoaDonAn> searchTinhTrang(int tinhTrang);
 
-    List<HoaDon> searchNgay(String ngayTao, String ngaythanhToan);
+    List<HoaDonAn> searchNgay(String ngayTao, String ngaythanhToan);
     
-    List<HoaDonChiTiet> listHDCTGetHD(Long maHoaD);
+    List<HoaDonChiTietAn> listHDCTGetHD(Long maHoaD);
 }

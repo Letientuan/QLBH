@@ -2,31 +2,36 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package entity;
+package entity.entities;
+
+import entity.SanPham;
+import entity.entities.HoaDonAn;
 
 /**
  *
  * @author thong
  */
-public class HoaDonChiTiet {
+public class HoaDonChiTietAn {
 
     private Long maHDCTTT;
-    private HoaDon maHD;
+    private HoaDonAn maHD;
     private SanPham maSP;
     private Integer soLuong;
     private Double donGia;
     private String tenSP;
+    private Double thanhtien;
 
-    public HoaDonChiTiet() {
+    public HoaDonChiTietAn() {
     }
 
-    public HoaDonChiTiet(Long maHDCTTT, HoaDon maHD, SanPham maSP, Integer soLuong, Double donGia, String tenSP) {
+    public HoaDonChiTietAn(Long maHDCTTT, HoaDonAn maHD, SanPham maSP, Integer soLuong, Double donGia, String tenSP,Double thanhtien) {
         this.maHDCTTT = maHDCTTT;
         this.maHD = maHD;
         this.maSP = maSP;
         this.soLuong = soLuong;
         this.donGia = donGia;
         this.tenSP = tenSP;
+        this.thanhtien = thanhtien;
     }
 
     public Long getMaHDCTTT() {
@@ -37,11 +42,11 @@ public class HoaDonChiTiet {
         this.maHDCTTT = maHDCTTT;
     }
 
-    public HoaDon getMaHD() {
+    public HoaDonAn getMaHD() {
         return maHD;
     }
 
-    public void setMaHD(HoaDon maHD) {
+    public void setMaHD(HoaDonAn maHD) {
         this.maHD = maHD;
     }
 
@@ -76,6 +81,15 @@ public class HoaDonChiTiet {
     public void setTenSP(String tenSP) {
         this.tenSP = tenSP;
     }
+
+    public Double getThanhtien() {
+        return thanhtien;
+    }
+
+    public void setThanhtien(Double thanhtien) {
+        this.thanhtien = thanhtien;
+    }
+    
 
     
 }
