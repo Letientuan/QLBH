@@ -361,10 +361,10 @@ public class HoaDonView extends javax.swing.JPanel {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             String dateStart = sdf.format(JDCNgayStart1.getDate());
             String dateEnd = sdf.format(JDCNgayEnd.getDate());
-            List<HoaDonAn> listHD = hoaDonServiceImpl.searchNgay(dateStart, dateEnd);
+            List<HoaDonAn> listHD1 = hoaDonServiceImpl.searchNgay(dateStart, dateEnd);
             tblModel = (DefaultTableModel) tblHoaDon.getModel();
             tblModel.setRowCount(0);
-            for (HoaDonAn x : listHD) {
+            for (HoaDonAn x : listHD1) {
                 Object row[] = new Object[]{
                     x.getMaHD(), x.getManhanVien().getMaNV(), x.getManhanVien().getTenNV(), x.getMakhachHang().getMaKH(), x.getMakhachHang().getTenKH(), x.getTongTien(),
                     x.getThanhToan(), x.getNgayTao(), x.getPhuongThucThanhToan(), x.getNgayThanhToan(),

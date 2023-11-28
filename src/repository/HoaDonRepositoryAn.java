@@ -132,8 +132,8 @@ public class HoaDonRepositoryAn {
         Connection conn = DBConnection.getConnection();
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, ngayTao);
-            ps.setString(2, ngaythanhToan);
+            ps.setString(1, ngaythanhToan);
+            ps.setString(2, ngayTao);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 KhachHang hang = new KhachHang(rs.getString("maKH"), rs.getString("TenKH"));
